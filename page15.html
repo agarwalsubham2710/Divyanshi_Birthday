@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+
+<style>
+#secretHeart {
+  font-size: 50px;
+  cursor: pointer;
+  margin-top: 30px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container fade">
+  <h1>🎉 Happy Birthday My Love ❤️</h1>
+  <p>Tum sirf special nahi ho…<br>
+tum meri life ka best part ho 💖<br>
+Dua hai:<br>
+Tum hamesha smile karti raho 😊<br>
+aur tumhari life me happiness kabhi kam na ho ✨<br>
+Aur haan…<br>
+us happiness me thoda sa main bhi rahu 😏❤️</p><br><br><br><br>
+
+<p>
+    Secret Message:- Not all hearts are just emoji😁😁
+</p>
+  <!-- SECRET HEART -->
+  <div id="secretHeart" onclick="goSecret()">❤️</div>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+// HEART CLICK FUNCTION
+function goSecret(){
+  window.location.href = "secret.html";
+}
+</script>
+
+<!-- CONFETTI -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+setInterval(()=>{ confetti(); },1000);
+</script>
+
+<audio id="bgMusic" autoplay loop>
+  <source src="Songs/song15.mp3">
+</audio>
+
+</body>
+</html>

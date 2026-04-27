@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<style>
+.heart {
+  position:absolute;
+  color:red;
+  animation: float 5s infinite;
+}
+@keyframes float {
+  0% {transform:translateY(0);}
+  100% {transform:translateY(-500px);}
+}
+</style>
+</head>
+<body>
+
+<div class="container fade">
+  <h1>Pata hai… ❤️</h1>
+  <p>
+    tumhari aadat si ho gayi hai mujhe 😌<br>
+    na baat ho toh ajeeb lagta hai,<br>
+    aur baat ho toh time ka pata nahi chalta 💖
+  </p>
+  <button onclick="nextPage('page7.html')">Next</button>
+</div>
+
+<script>
+for(let i=0;i<20;i++){
+  let h=document.createElement("div");
+  h.className="heart";
+  h.innerText="❤️";
+  h.style.left=Math.random()*100+"%";
+  document.body.appendChild(h);
+}
+</script>
+
+<audio id="bgMusic" autoplay loop>
+  <source src="Songs/song6.mp3">
+</audio>
+
+<audio autoplay loop>
+<source src="song5.mp3">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>

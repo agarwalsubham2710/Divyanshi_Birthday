@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container fade">
+  <h2>Question 💭</h2>
+  <p>“Mere baare me tumhe sabse zyada kya pasand hai… aur kyun?”</p>
+  <input type="text" id="answer" placeholder="Type your answer..."><br><br>
+  <button id="saveBtn" disabled>Save 💾</button>
+  <br>
+  <button id="nextBtn" disabled>Next ➡️</button>
+</div>
+
+<script src="script.js"></script>
+<script>
+let input = document.getElementById("answer");
+let saveBtn = document.getElementById("saveBtn");
+let nextBtn = document.getElementById("nextBtn");
+
+// enable save on typing
+input.addEventListener("input", () => {
+  saveBtn.disabled = input.value.trim() === "";
+});
+
+// save click
+saveBtn.onclick = function(){
+  let ans = input.value;
+
+  sendData({
+    name: "HerName",
+    q1: ans
+  }).then(() => {
+    alert("Saved ❤️");
+    nextBtn.disabled = false;
+    saveBtn.disabled = true;
+  });
+};
+
+// next click
+nextBtn.onclick = function(){
+  nextPage("page5.html");
+};
+
+</script>
+
+<audio id="bgMusic" autoplay loop>
+  <source src="Songs/song4.mp3">
+</audio>
+
+</body>
+</html>

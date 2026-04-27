@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container fade">
+  <p id="typing"></p>
+
+<script>
+let text = "Sab kuch ek simple 'Hi' se start hua tha… 💬";
+let i = 0;
+
+function type(){
+  if(i < text.length){
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(type, 50);
+  }
+}
+type();
+</script>
+
+  <button onclick="nextPage('page4.html')">Next</button>
+</div>
+
+<audio autoplay loop>
+  <source src="Songs/song3.mp3">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<style>
+.book {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  text-align: center;
+  padding-top: 50px;
+}
+
+.book img {
+  width: 300px;
+  border-radius: 20px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+.book img {
+  animation: zoom 0.5s;
+}
+
+@keyframes zoom {
+  from {transform: scale(0.5);}
+  to {transform: scale(1);}
+}
+</style>
+</head>
+<body>
+
+<div class="container fade">
+  <h1><b>
+    Tumhare kuch Photos jo hamesa<br> mere dil ke pass rahege
+  </b> 📸</h1>
+
+<button onclick="openBook()">Show Photos 📖</button>
+<br><br>
+
+<div id="photoBook" class="book">
+
+  <span class="close" onclick="closeBook()">❌</span>
+
+  <img id="bookImg" src="photos/photo1.jpg">
+
+  <br><br>
+
+  <button onclick="prev()">⬅️</button>
+  <button onclick="next()">➡️</button>
+
+</div>
+
+  <button onclick="nextPage('page11.html')">Next</button>
+</div>
+
+<script>
+let images = [
+  "photos/photo1.jpg",
+  "photos/photo2.jpg",
+  "photos/photo3.jpg",
+  "photos/photo4.jpg",
+  "photos/photo5.jpg"
+];
+
+let index = 0;
+
+function openBook(){
+  document.getElementById("photoBook").style.display = "block";
+  document.getElementById("bookImg").src = images[index];
+}
+
+function closeBook(){
+  document.getElementById("photoBook").style.display = "none";
+}
+
+function next(){
+  index = (index + 1) % images.length;
+  document.getElementById("bookImg").src = images[index];
+}
+
+function prev(){
+  index = (index - 1 + images.length) % images.length;
+  document.getElementById("bookImg").src = images[index];
+}
+</script>
+
+<audio id="bgMusic" autoplay loop>
+  <source src="Songs/song10.mp3">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>

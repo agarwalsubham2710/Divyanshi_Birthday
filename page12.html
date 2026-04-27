@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<style>
+#noBtn {
+  position:absolute;
+}
+</style>
+</head>
+<body>
+
+<div class="container fade">
+  <h2>Kya tum hamesha mere saath rahogi? ❤️</h2>
+
+  <button onclick="yes()">YES 💖</button>
+  <button id="noBtn" onmouseover="move()">NO 😝</button>
+</div>
+
+<script>
+function yes(){
+  nextPage('page13.html');
+}
+
+function move(){
+  let btn=document.getElementById("noBtn");
+  btn.style.top=Math.random()*80+"%";
+  btn.style.left=Math.random()*80+"%";
+}
+</script>
+
+<audio id="bgMusic" autoplay loop>
+  <source src="Songs/song12.mp3">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
